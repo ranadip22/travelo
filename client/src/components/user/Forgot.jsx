@@ -1,5 +1,5 @@
 import React from 'react';
-import './Forg.css';
+import './Forget.css';
 import Navbar from '../navbar/Navbar';
 import { Link } from 'react-router-dom';
 
