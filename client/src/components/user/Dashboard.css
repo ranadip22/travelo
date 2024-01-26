@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard-bg {
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("../../../public/assets/nbackground.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* .sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: calc(100% - 52px);
+    width: 250px;
+    background: #fff;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.sidebar-links:hover {
+    background: #000;
+    color: #fff;
+} */

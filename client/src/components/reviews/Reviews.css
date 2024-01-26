@@ -1,0 +1,51 @@
+#review-bg {
+    background-image: url(../../../public/assets/608a8d56d2cd222ef0b477032a753c3f.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    object-fit: contain;
+}
+
+.review {
+    background-color: white;
+    padding-left: 10px;
+    width: 50%;
+    transform: translate(95%, 20%);
+}
+
+.review-head {
+    text-align: left;
+    font-size: 32px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+}
+
+.place {
+    text-align: left;
+    font-size: 24px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+}
+
+.review-text {
+    text-align: left;
+    font-size: 24px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 600;
+}
+
+.cust-name {
+    text-align: left;
+    font-size: 24px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+}
