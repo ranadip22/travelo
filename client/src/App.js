@@ -12,6 +12,7 @@ import Forgot from "./components/user/Forgot.jsx";
 import About from "./components/about/About.jsx";
 import Contact from "./components/contact/Contact.jsx";
 import Dashboard from "./components/user/Dashboard.jsx";
+import SearchResult from "./components/search-result/SearchResult.jsx";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="#destination" element={<MostPopular />} />
             <Route path="#reviews" element={<Reviews />} />
             <Route path="#newsletter" element={<Newsletter />} />
+            <Route path="/search" element={<SearchResult />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<Forgot />} />
