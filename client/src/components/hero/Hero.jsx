@@ -1,15 +1,25 @@
 import React, { useState } from "react";
 import "./hero.css";
 import Navbar from "../navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
-const Hero = (onSearch) => {
-  const [formData, setFormData] = useState({ whereTo: '', bookingType: '', date: '', guest: '' })
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+function Hero() {
+  const [formData, setFormData] = useState({
+    whereTo: "",
+    bookingType: "",
+    date: "",
+    guest: "",
+  });
+
+  const navigate = useNavigate(); // Call useNavigate at the top level
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(formData);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate('/search', { state: formData }); // Use the navigate function
   };
   const [color, setColor] = useState(false);
   const changeColor = () => {
@@ -64,7 +74,7 @@ const Hero = (onSearch) => {
         </button>
       </form>
     </div>
-  );
+  )
 }
 
 export default Hero

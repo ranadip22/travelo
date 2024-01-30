@@ -1,51 +1,26 @@
-import React, { useState } from 'react';
-import Hero from '../hero/Hero';
-import Navbar from '../navbar/Navbar'
-import './SearchResult.css'
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import Navbar from '../navbar/Navbar';
 
 function SearchResult() {
-    const [searchResults, setSearchResults] = useState([]);
-
-    const handleSearch = (formData) => {
-        // Simulate fetching results (replace this with actual API call)
-        const results = [
-            { name: 'Result 1', description: 'Description 1' },
-            { name: 'Result 2', description: 'Description 2' },
-            { name: 'Result 3', description: 'Description 3' }
-            // Add more results as needed
-        ];
-
-        setSearchResults(results);
-    };
-
+    const { searchResults } = useParams();
+    useEffect(() => { }, [searchResults]);
     return (
         <>
             <Navbar />
-            <div className="container">
-                <Hero onSearch={handleSearch} />
-                <SearchResult results={searchResults} />
+            <div className="search-results">
+                {searchResults && searchResults.length > 0 ? (
+                    searchResults.map((p) => (
+                        <div key={p.id} className="package-card">
+                            {/* Render package details, e.g., title, image, price, etc. */}
+                        </div>
+                    ))
+                ) : (
+                    <p>No results found.</p>
+                )}
             </div>
         </>
     );
 };
-
-// function SearchResult(results) {
-//     return (
-//         <>
-//             <Navbar />
-//             <div className="search-result">
-//                 <h1>Search Results</h1>
-//                 <div id="search-results">
-//                     {results.map((result, index) => (
-//                         <div key={index}>
-//                             <h3>{result.name}</h3>
-//                             <p>{result.description}</p>
-//                         </div>
-//                     ))}
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
 
 export default SearchResult
