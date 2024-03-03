@@ -24,7 +24,7 @@ function App() {
             {/* <Route path="/destination" element={<Destination />} /> */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="#packages" element={<Offers />} />
+            <Route path="/#packages" element={<Offers />} />
             <Route path="#tours" element={<TourType />} />
             <Route path="#destination" element={<MostPopular />} />
             <Route path="#reviews" element={<Reviews />} />
