@@ -1,5 +1,20 @@
 const express = require('express')
+const mongoose = require('mongoose');
 const app = express()
+mongoose.connect("mongodb://localhost:27017/travelo")
+    .then(() => console.log('MongoDB Connected'))
+    .catch((err) => console.log(err));
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String,
+    phone: Number,
+    address: String,
+    city: String,
+})
+
+const UserModel = mongoose.model('User', userSchema)
 
 app.get('/', (req, res) => {
     res.send('hello world')
