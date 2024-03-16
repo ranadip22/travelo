@@ -330,8 +330,25 @@ import "./MainContent.css";
 
 function MainContent({ activeSection }) {
   const [editFname, setEditFname] = useState(false);
+  const [editLname, setEditLname] = useState(false);
+  const [editdob, setEditdob] = useState(false);
+  const [editgender, setEditgender] = useState(false);
+  const [editphone, setEditphone] = useState(false);
+  const [editemail, setEditemail] = useState(false);
+  const [edituname, setEdituname] = useState(false);
   const [fname, setFname] = useState("");
-  
+  const [lname, setLname] = useState("");
+const [dob, setDob] = useState("");
+const [gender, setGender] = useState("");
+const [phone, setPhone] = useState("");
+const [email, setEmail] = useState("");
+const [uname, setUname] = useState("");
+const [details, setDetails] = useState('');
+const [editedDetail, setEditedDetail] = useState('');
+const [oldPassword, setOldPassword] = useState('');
+const [newPassword, setNewPassword] = useState('');
+const [confirmPassword, setConfirmPassword] = useState('');
+
   const handleEditFname = () => {
     setEditFname(!editFname);
   };
@@ -347,34 +364,76 @@ function MainContent({ activeSection }) {
     console.log("Updated first name:", fname);
   };
 
+  const handleEditLname = () => {
+    setEditFname(!editFname);
+  };
+
+  const handleLnameChange = (e) => {
+    setFname(e.target.value);
+  };
+
+  const handleLnameSubmit = (e) => {
+    e.preventDefault();
+    setEditFname(false); // Disable edit mode after submitting
+    // Perform any additional logic (e.g., API call) to update the first name
+    console.log("Updated first name:", fname);
+  };
+
   return (
     <>
       {activeSection === "profile" && (
-        <form onSubmit={handleFnameSubmit}>
-          <main className="home-section">
-            <div className="home-input">
-              <label htmlFor="fname">
-                First Name{" "}
-                {editFname ? (
-                  <input
-                    type="text"
-                    value={fname}
-                    onChange={handleFnameChange}
-                  />
-                ) : (
-                  <b>{fname}</b>
+        <>
+          <form onSubmit={handleFnameSubmit}>
+            <main className="home-section">
+              <div className="home-input">
+                <label htmlFor="fname">
+                  First Name{" "}
+                  {editFname ? (
+                    <input
+                      type="text"
+                      value={fname}
+                      onChange={handleFnameChange}
+                    />
+                  ) : (
+                    <b>{fname}</b>
+                  )}
+                </label>
+                <button type="button" className="button-1" onClick={handleEditFname}>
+                  {editFname ? "Cancel" : "Edit"}
+                </button>
+                {editFname && (
+                  // <button type="submit">Save</button>
+                  <button type="submit" className="button-1">Update</button>
                 )}
-              </label>
-              <button type="button" className="button-1" onClick={handleEditFname}>
-                {editFname ? "Cancel" : "Edit"}
-              </button>
-              {editFname && (
-                // <button type="submit">Save</button>
-                <button type="submit" className="button-1">Update</button>
-              )}
-            </div>
-          </main>
-        </form>
+              </div>
+            </main>
+          </form>
+          <form onSubmit={handleLnameSubmit}>
+            <main className="home-section">
+              <div className="home-input">
+                <label htmlFor="lname">
+                  Last Name{" "}
+                  {editLname ? (
+                    <input
+                      type="text"
+                      value={lname}
+                      onChange={handleLnameChange}
+                    />
+                  ) : (
+                    <b>{lname}</b>
+                  )}
+                </label>
+                <button type="button" className="button-1" onClick={handleEditLname}>
+                  {editLname ? "Cancel" : "Edit"}
+                </button>
+                {editLname && (
+                  // <button type="submit">Save</button>
+                  <button type="submit" className="button-1">Update</button>
+                )}
+              </div>
+            </main>
+          </form>
+        </>
       )}
       {/* Add other sections */}
     </>
