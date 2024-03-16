@@ -15,7 +15,9 @@ const Navbar = () => {
   return (
     <div className={color ? 'navbar scrolled' : 'navbar'}>
       <div className="logo">
-        Tra<span className='logo-sub'>velo</span>
+        <Link to="/" className='logo'>
+          Tra<span className='logo-sub'>velo</span>
+        </Link>
       </div>
       <div className="navbar-items">
         <Link className="navbar-item" to='/'>Home</Link>
